@@ -1,0 +1,64 @@
+{
+  "name": "@escapeengineers/asyncapi-generator-template-dotnet",
+  "version": "0.2.0",
+  "description": "Template for generating dotnet source files",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --config .eslintrc .",
+    "format": "prettier --write \"**/*.{js,json,md}\"",
+    "get:version": "echo $npm_package_version",
+    "get:name": "echo $npm_package_name",
+    "bump:version": "yarn --no-git-tag-version --allow-same-version version $VERSION"
+  },
+  "keywords": [
+    "escapeengineers",
+    "asyncapi",
+    "generator",
+    "template"
+  ],
+  "author": "Sandro Lutz <sandro@escapeengineers.ch>",
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@asyncapi/generator-react-sdk": "^0.2.3",
+    "@escapeengineers/api-generator-hooks": "git+https://github.com/temparus/asyncapi-generator-hooks.git"
+  },
+  "preferGlobal": true,
+  "generator": {
+    "renderer": "react",
+    "parameters": {
+      "namespace": {
+        "description": "Base namespace to associate the generated source code. (e.g. EscapeEngineers.EscapeEngine.libraries.ServerPlayground)",
+        "default": ""
+      },
+      "copyright": {
+        "description": "Copyright notice added at the beginning of every file.",
+        "default": "Copyright (c) EscapeEngineers. All Rights Reserved."
+      },
+      "ownDeviceId": {
+        "description": "Specify the device id which should be inserted into the channel/topic names. Required if more than one device id is allowed.",
+        "required": false
+      }
+    },
+    "hooks": {
+      "@escapeengineers/asyncapi-generator-hooks": "replaceOwnDeviceId"
+    },
+    "nonRenderableFiles": [
+      "style.css",
+      "sample.gif"
+    ],
+    "generator": ">=1.3.0 <2.0.0"
+  },
+  "devDependencies": {
+    "@asyncapi/parser": "^1.4.3",
+    "@escapeengineers/api-generator": "^0.2.2",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-security": "^1.4.0",
+    "prettier": "^2.2.1"
+  }
+}

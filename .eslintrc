@@ -1,0 +1,33 @@
+{
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "root": true,
+  "plugins": ["react", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:security/recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "no-console": 1, // warning
+    "prettier/prettier": 2, // error
+    "react/jsx-uses-react": 0, // off
+    "react/react-in-jsx-scope": 0, // off
+    "react/display-name": 0, // off
+    "react/prop-types": 0, // off
+    "react/jsx-key": 0, // off
+    "security/detect-non-literal-fs-filename": 0, // off
+    "security/detect-object-injection": 0 // off
+  }
+}
