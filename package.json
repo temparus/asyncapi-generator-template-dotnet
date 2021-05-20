@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@asyncapi/generator-react-sdk": "^0.2.3",
-    "@escapeengineers/api-generator-hooks": "git+https://github.com/temparus/asyncapi-generator-hooks.git"
+    "@escapeengineers/asyncapi-generator-hooks": "git+https://github.com/temparus/asyncapi-generator-hooks.git"
   },
   "preferGlobal": true,
   "generator": {
@@ -53,7 +53,7 @@
   },
   "devDependencies": {
     "@asyncapi/parser": "^1.4.3",
-    "@escapeengineers/api-generator": "^0.2.2",
+    "@asyncapi/generator": "^1.7.0",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
